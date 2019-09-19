@@ -1,16 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.util.*"%>
-<%-- <%@ page import="java.text.SimpleDateFormat"%>
-<%@ page import="net.board.db.*"%>
-<%
-	List boardList = (List) request.getAttribute("boardlist");
-	int listcount = ((Integer) request.getAttribute("listcount")).intValue();
-	int nowpage = ((Integer) request.getAttribute("page")).intValue();
-	int maxpage = ((Integer) request.getAttribute("maxpage")).intValue();
-	int startpage = ((Integer) request.getAttribute("startpage")).intValue();
-	int endpage = ((Integer) request.getAttribute("endpage")).intValue();
-%> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,80 +14,24 @@
 			<td align=right><font size=2> <%-- 글 개수 : ${listcount } --%>
 			</font></td>
 		</tr>
-		<tr align="center" valign="middle" bordercolor="#333333">
-			<td width="8%" height="26">
-				<div align="center">번호</div>
-			</td>
-			<td width="50%">
-				<div align="center">제목</div>
-			</td>
-			<td width="14%">
-				<div align="center">작성자</div>
-			</td>
-			<td width="17%">
-				<div align="center">날짜</div>
-			</td>
-			<td width="11%">
-				<div align="center">조회수</div>
-			</td>
+		<tr align="center" valign="middle">
+			<td>번호</td>
+			<td>작성자</td>
+			<td>제목</td>
+			<td>날짜</td>
+			<td>조회수</td>
 		</tr>
-		<%-- 		<%
-			for (int i = 0; i < boardList.size(); i++) {
-				BoardBean bl = (BoardBean) boardList.get(i);
-		%> --%>
-		<tr align="center" valign="middle" bordercolor="#333333"
-			onmouseover="this.style.backgroundColor='F8F8F8'"
-			onmouseout="this.style.backgroundColor=''">
-			<td height="23" style="font-family: Tahoma; font-size: 10pt;">
-				<%-- <%=bl.getBOARD_NUM()%> --%>
-			</td>
-			<td style="font-family: Tahoma; font-size: 10pt;">
-				<div align="left">
-					<%-- <%
-						if (bl.getBOARD_RE_LEV() != 0) {
-					%>
-					<%
-						for (int a = 0; a <= bl.getBOARD_RE_LEV() * 2; a++) {
-					%>
-					&nbsp;
-					<%
-						}
-					%>
-					▶
-					<%
-						} else {
-					%>
-					▶
-					<%
-						}
-					%> --%>
-					<a
-						href="./BoardDetailAction.bo?num=<%-- <%=bl.getBOARD_NUM()%> --%>">
-						<%--  <%=bl.getBOARD_SUBJECT()%> --%>
-					</a>
-				</div>
-			</td>
-			<td style="font-family: Tahoma; font-size: 10pt;">
-				<div align="center">
-					<%-- <%=bl.getBOARD_NAME()%> --%>
-				</div>
-			</td>
-			<td style="font-family: Tahoma; font-size: 10pt;">
-				<div align="center">
-					<%-- <%=bl.getBOARD_DATE()%> --%>
-				</div>
-			</td>
-			<td style="font-family: Tahoma; font-size: 10pt;">
-				<div align="center">
-					<%-- <%=bl.getBOARD_READCOUNT()%> --%>
-				</div>
-			</td>
-		</tr>
-		<%-- 		<%
-			}
-		%> --%>
-		<tr align=center height=20>
-			<td colspan=7 style="font-family: Tahoma; font-size: 10pt;">
+		<c:forEach items="${boardList}" var="boardList">
+			<tr align="center">
+				<td>${boardList.no}</td>
+				<td>${boardList.id}</td>
+				<td><a href="/board/detail?no=${boardList.no}">${boardList.title}</a></td>
+				<td>${boardList.date}</td>
+				<td>${boardList.hit}</td>
+			</tr>
+		</c:forEach>
+		<tr align=center>
+			<td>
 				<%-- <%
 					if (nowpage <= 1) {
 				%> [이전]&nbsp; <%
@@ -127,7 +61,7 @@
 			</td>
 		</tr>
 		<tr align="right">
-			<td colspan="5"><a href="./write">[글쓰기]</a></td>
+			<td><button type="button" onclick="location.href='./writePage'">글쓰기</button></td>
 		</tr>
 	</table>
 </body>
