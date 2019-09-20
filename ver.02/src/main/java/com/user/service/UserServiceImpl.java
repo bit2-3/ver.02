@@ -1,7 +1,12 @@
 package com.user.service;
 
+import java.util.Enumeration;
+import java.util.Hashtable;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
 
 import org.springframework.stereotype.Service;
 
@@ -14,13 +19,22 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	private UserDAO dao;
 
+	@Inject
+	private static Hashtable loginUsers = new Hashtable();
+
 	@Override
 	public boolean userLogin(UserDTO dto, HttpSession session) throws Exception {
-		boolean result = dao.userLogin(dto);
-		if (result) {
-			session.setAttribute("id", dto.getId());
+		boolean isLogin = isLogin(dto.getId());
+		System.out.println(isLogin);
+
+		if (!isLogin) {
+			boolean result = dao.userLogin(dto);
+			if (result) {
+				setSession(session, dto);
+			}
+			return result;
 		}
-		return result;
+		return !isLogin;
 	}
 
 	@Override
@@ -55,7 +69,43 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void userLogout(HttpSession session) throws Exception {
+		loginUsers.remove(session.getId());
 		session.invalidate();
+	}
+
+	// 로그인이 되어있는지 확인
+	public boolean isLogin(String id) {
+		boolean isLogin = false;
+
+		Enumeration e = loginUsers.keys();
+		String key = "";
+		System.out.println(e);
+
+		while (e.hasMoreElements()) {
+			key = (String) e.nextElement();
+			if (id.equals(loginUsers.get(key)))
+				isLogin = true;
+		}
+
+		return isLogin;
+	}
+
+	public boolean isUsing(String sessionId) {
+		boolean isUsing = false;
+
+		Enumeration e = loginUsers.keys();
+		String key = "";
+		while (e.hasMoreElements()) {
+			key = (String) e.nextElement();
+			if (sessionId.equals(loginUsers.get(key)))
+				isUsing = true;
+		}
+		return isUsing;
+	}
+
+	public void setSession(HttpSession session, UserDTO dto) {
+		loginUsers.put(session.getId(), dto.getId());
+		session.setAttribute("id", dto.getId());
 	}
 
 }

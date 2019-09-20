@@ -3,18 +3,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="/resources/css/bootstrap4-hello-world.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400"
+	rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <title>Board List</title>
 </head>
 <body>
-	<h1>id : ${sessionScope.id}</h1>
-	<c:if test="${sessionScope.id != null}">
-		<button type="button"
-			onclick="location.href='/user/detail?id=${sessionScope.id}'">정보
-			수정</button>
-			<button type="button" onclick="location.href='/user/logout'">로그아웃</button>
-	</c:if>
+	<jsp:include page="/WEB-INF/views/template/header.jsp" />
 	<table>
 		<tr align="center">
 			<td colspan="4">게시판</td>
