@@ -14,6 +14,6 @@ public class MainController {
 	
 	@RequestMapping("user")
 	public String user() {
-		return "redirect:/user/login";
+		return "redirect:/user/loginPage";
 	}
 }

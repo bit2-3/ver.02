@@ -2,7 +2,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="com.user.mapper.userMapper">
 
+	<select id="userLogin" resultType="String">
+		SELECT name from user WHERE
+		id=#{id} AND pw=#{pw}
+	</select>
+	
+	<insert id="userJoin">
+	INSERT INTO user (id, pw, name, zipcode, addr1, addr2, phone, email)
+	values (#{id}, #{pw}, #{name}, #{zipcode}, #{addr1}, #{addr2}, #{phone}, #{email})
+	</insert>
+	
 </mapper>

@@ -8,13 +8,12 @@
 <title>Board List</title>
 </head>
 <body>
-	<table width=50% border="0" cellpadding="0" cellspacing="0">
-		<tr align="center" valign="middle">
+<h1>id : ${sessionScope.id}</h1>
+	<table>
+		<tr align="center">
 			<td colspan="4">게시판</td>
-			<td align=right><font size=2> <%-- 글 개수 : ${listcount } --%>
-			</font></td>
 		</tr>
-		<tr align="center" valign="middle">
+		<tr align="center">
 			<td>번호</td>
 			<td>작성자</td>
 			<td>제목</td>

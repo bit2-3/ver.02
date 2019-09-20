@@ -1,6 +1,6 @@
 package com.user.db;
 
-// Îç∞Ïù¥ÌÑ∞ model
+// µ•¿Ã≈Õ model
 public class UserDTO {
 	private String id;
 	private String pw;
@@ -10,19 +10,6 @@ public class UserDTO {
 	private String addr2;
 	private int phone;
 	private String email;
-
-	public UserDTO(String id, String pw, String name, int zipcode, String addr1, String addr2, int phone,
-			String email) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.name = name;
-		this.zipcode = zipcode;
-		this.addr1 = addr1;
-		this.addr2 = addr2;
-		this.phone = phone;
-		this.email = email;
-	}
 
 	public String getId() {
 		return id;
