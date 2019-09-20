@@ -37,4 +37,25 @@ public class UserServiceImpl implements UserService {
 		dao.userJoin(dto);
 	}
 
+	@Override
+	public UserDTO userDetail(String id) throws Exception {
+		return dao.userDetail(id);
+	}
+
+	@Override
+	public void userEdit(UserDTO dto) throws Exception {
+		dao.userEdit(dto);
+	}
+
+	@Override
+	public void userDelete(String id, HttpSession session) throws Exception {
+		session.invalidate();
+		dao.userDelete(id);
+	}
+
+	@Override
+	public void userLogout(HttpSession session) throws Exception {
+		session.invalidate();
+	}
+
 }

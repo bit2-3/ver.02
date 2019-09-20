@@ -23,4 +23,19 @@ public class UserDAOImpl implements UserDAO {
 	public void userJoin(UserDTO dto) throws Exception {
 		sqlSession.insert(nameSpace + ".userJoin", dto);
 	}
+
+	@Override
+	public UserDTO userDetail(String id) throws Exception {
+		return sqlSession.selectOne(nameSpace + ".userDetail", id);
+	}
+
+	@Override
+	public void userEdit(UserDTO dto) throws Exception {
+		sqlSession.update(nameSpace + ".userEdit", dto);
+	}
+
+	@Override
+	public void userDelete(String id) throws Exception {
+		sqlSession.delete(nameSpace + ".userDelete", id);
+	}
 }

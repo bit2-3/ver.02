@@ -8,7 +8,13 @@
 <title>Board List</title>
 </head>
 <body>
-<h1>id : ${sessionScope.id}</h1>
+	<h1>id : ${sessionScope.id}</h1>
+	<c:if test="${sessionScope.id != null}">
+		<button type="button"
+			onclick="location.href='/user/detail?id=${sessionScope.id}'">정보
+			수정</button>
+			<button type="button" onclick="location.href='/user/logout'">로그아웃</button>
+	</c:if>
 	<table>
 		<tr align="center">
 			<td colspan="4">게시판</td>

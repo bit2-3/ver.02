@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.user.db.UserDTO;
@@ -43,6 +44,40 @@ public class UserController {
 	@RequestMapping("/join")
 	public String userJoin(@ModelAttribute UserDTO dto) throws Exception {
 		service.userJoin(dto);
+		return "redirect:/user/loginPage";
+	}
+
+	@RequestMapping("/detail")
+	public ModelAndView userDetail(@RequestParam String id) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/user/UserDetail");
+		mav.addObject("userDetail", service.userDetail(id));
+		return mav;
+	}
+
+	@RequestMapping("/editPage")
+	public ModelAndView userEditPage(@RequestParam String id) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/user/UserEdit");
+		mav.addObject("userEdit", service.userDetail(id));
+		return mav;
+	}
+
+	@RequestMapping("/edit")
+	public String userEdit(@ModelAttribute UserDTO dto) throws Exception {
+		service.userEdit(dto);
+		return "redirect:/user/detail?id=" + dto.getId();
+	}
+
+	@RequestMapping("delete")
+	public String userDelete(@RequestParam String id, HttpSession session) throws Exception {
+		service.userDelete(id, session);
+		return "redirect:/user/loginPage";
+	}
+
+	@RequestMapping("/logout")
+	public String userLogout(HttpSession session) throws Exception {
+		service.userLogout(session);
 		return "redirect:/user/loginPage";
 	}
 

@@ -9,10 +9,29 @@
 		SELECT name from user WHERE
 		id=#{id} AND pw=#{pw}
 	</select>
-	
+
 	<insert id="userJoin">
-	INSERT INTO user (id, pw, name, zipcode, addr1, addr2, phone, email)
-	values (#{id}, #{pw}, #{name}, #{zipcode}, #{addr1}, #{addr2}, #{phone}, #{email})
+		INSERT INTO user (id, pw, name, zipcode, addr1,
+		addr2, phone, email)
+		values (#{id}, #{pw}, #{name}, #{zipcode},
+		#{addr1}, #{addr2}, #{phone},
+		#{email})
 	</insert>
-	
+
+	<select id="userDetail" resultType="UserDTO">
+		SELECT * from user WHERE
+		id=#{id}
+	</select>
+
+	<update id="userEdit">
+		UPDATE user SET pw=#{pw}, zipcode=#{zipcode},
+		addr1=#{addr1},
+		addr2=#{addr2}, phone=#{phone}, email=#{email} WHERE
+		id=#{id}
+	</update>
+
+	<delete id="userDelete">
+		DELETE from user WHERE id=#{id}
+	</delete>
+
 </mapper>
