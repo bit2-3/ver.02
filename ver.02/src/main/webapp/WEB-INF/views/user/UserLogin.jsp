@@ -49,7 +49,7 @@
 														<div class="input-group-prepend">
 															<button class="btn btn-lg btn-dark" type="button">pw</button>
 														</div>
-														<input type="text" class="form-control form-control-lg"
+														<input type="password" class="form-control form-control-lg"
 															name="pw">
 													</div>
 												</div>

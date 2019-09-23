@@ -53,7 +53,7 @@
 														<div class="ht-tm-element ht-tm-element-inner">
 															<h6>내용</h6>
 															<textarea class="form-control" type="textarea"
-																name="content">${boardEdit.id}</textarea>
+																name="content">${boardEdit.content}</textarea>
 														</div>
 														<br>
 														<div class="ht-tm-element ht-tm-element-inner">

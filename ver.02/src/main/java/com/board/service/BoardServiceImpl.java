@@ -1,8 +1,7 @@
 package com.board.service;
 
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,6 +51,16 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void boardEdit(BoardDTO dto) throws Exception {
 		dao.boardEdit(dto);
+	}
+
+	@Override
+	public List<Map<String, Object>> listAll(Criteria cri) throws Exception {
+		return dao.listAll(cri);
+	}
+
+	@Override
+	public int boardListCnt(BoardDTO dto) throws Exception {
+		return dao.boardListCnt(dto);
 	}
 
 }

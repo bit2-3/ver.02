@@ -28,7 +28,16 @@
 	</insert>
 
 	<update id="boardEdit">
-		UPDATE board SET title=#{title}, content=#{content}, date=now() WHERE no=#{no}
+		UPDATE board SET title=#{title}, content=#{content},
+		date=now() WHERE no=#{no}
 	</update>
+
+	<select id="listAll" resultType="hashMap">
+		SELECT * from board ORDER BY no DESC LIMIT #{pageStart}, #{perPageNum}
+	</select>
+	
+	<select id="baordListCnt" resultType="int">
+		SELECT COUNT(*) as boardCnt from board
+	</select>
 
 </mapper>

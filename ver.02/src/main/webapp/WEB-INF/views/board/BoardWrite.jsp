@@ -44,13 +44,13 @@
 														<div class="ht-tm-element ht-tm-element-inner">
 															<h6>제목</h6>
 															<input class="form-control" type="text"
-																placeholder="title" name="title">
+																placeholder="title" required name="title">
 														</div>
 														<br>
 														<div class="ht-tm-element ht-tm-element-inner">
 															<h6>내용</h6>
 															<textarea class="form-control" type="textarea"
-																placeholder="내용" name="content"></textarea>
+																placeholder="내용" required name="content"></textarea>
 														</div>
 														<br>
 														<div align="center">
