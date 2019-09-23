@@ -2,11 +2,24 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="/resources/css/bootstrap4-hello-world.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400"
+	rel="stylesheet">
+<script src='{% static "js/jquery-1.11.3.min.js" %}'></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <head>
 <meta charset="UTF-8">
 <title>User Join</title>
-<script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script language="javascript">
 	function checks() {
 		//값 불러오기 
@@ -51,11 +64,12 @@
 			getPw.focus();
 			return false;
 		} /* else if (!regMail.test(email)) { //메일주소 확인 
-			alert("이메일 형식 이상");
-			getMail.value = "";
-			getMail.focus();
-			return false;
-		} */ else if (!regName.test(name)) { //이름 확인 
+																																			alert("이메일 형식 이상");
+																																			getMail.value = "";
+																																			getMail.focus();
+																																			return false;
+																																		} */
+		else if (!regName.test(name)) { //이름 확인 
 			alert("이름 다시");
 			getName.value = "";
 			getName.focus();
@@ -63,7 +77,7 @@
 		}
 	}
 </script>
-<script language="javascript">
+<script>
 	function execDaumPostcode() {
 		new daum.Postcode({
 			oncomplete : function(data) {
@@ -104,63 +118,122 @@
 		}).open();
 	}
 </script>
+<script>
+	$(document).ready(function() {
+		$('#idCheck').on('click', function() {
+			$.ajax({
+				type : 'POST',
+				url : '/user/idCheck?id=' + $('#id').val(),
+				success : function(data) {
+					console.log('ddd', data)
+					if (data == 0) {
+						alert("사용 가능")
+					} else {
+						alert("사용 불가능")
+						$('#id').val('');
+					}
+				}
+			});
+		});
+	});
+</script>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/views/template/header.jsp" />
+	<br>
 	<form action="/user/join" method="post" onSubmit="return checks()">
-		<table align="center">
-			<tbody>
-				<tr>
-					<td colspan="2" align="center">회원 가입</td>
-				</tr>
-				<tr>
-					<td align="center">아이디</td>
-					<td><input type="text" id="id" name="id"> 4~12자의 영문
-						대소문자와 숫자로만 입력</td>
-				</tr>
-				<tr>
-					<td align="center">비밀번호</td>
-					<td><input type="password" id="pw" name="pw"> 4~12자의
-						영문 대소문자와 숫자로만 입력</td>
-				</tr>
-				<tr>
-					<td align="center">비밀번호 확인</td>
-					<td><input type="password" id="password_check"></td>
-				</tr>
-				<tr>
-					<td align="center">이름</td>
-					<td><input type="text" id="name" name="name"></td>
-				</tr>
-				<tr>
-					<td align="center">우편주소</td>
-					<td><input type="text" id="zipcode" name="zipcode"
-						placeholder="우편번호"> <input type="button"
-						onclick="execDaumPostcode()" value="우편번호 찾기"></td>
-				</tr>
-				<tr>
-					<td align="center">도로명 주소</td>
-					<td><input type="text" id="addr1" name="addr1"
-						placeholder="도로명주소"><br></td>
-				</tr>
-				<tr>
-					<td align="center">상세주소</td>
-					<td><input type="text" id="addr2" name="addr2"
-						placeholder="상세주소"><br></td>
-				</tr>
-				<tr>
-					<td align="center">전화번호</td>
-					<td><input type="text" name="phone"></td>
-				</tr>
-				<tr>
-					<td align="center">메일 주소</td>
-					<td><input type="text" id="email" name="email"> 예)
-						id@domain.com</td>
-				</tr>
-			</tbody>
-		</table>
-		<p align="center">
-			<input type="submit" value="회원 가입"> <input type="reset"
-				value="다시 입력">
-		</p>
+		<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
+			<div class="container ht-tm-container">
+
+				<div class="row">
+					<div class="col-xl-12">
+						<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
+							<div class="ht-tm-componentsblock">
+								<div class="ht-tm-cat ht-tm-btn-replaceable">
+									<div class="ht-tm-codeblock">
+										<div class="row">
+											<div class="col-xl-6">
+												<div class="card">
+													<div class="card-body">
+														<h1 class="display-4" align="center">User Join</h1>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>
+																아이디 : 4~12자의 영문 대소문자와 숫자로만 입력
+																<button type="button" class="btn btn-outline-warning" id="idCheck">중복 확인</button>
+															</h6>
+															<input type="text" class="form-control" id="id" name="id">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>비밀번호 : 4~12자의 영문 대소문자와 숫자로만 입력</h6>
+															<input type="password" class="form-control" id="pw"
+																name="pw">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>비밀번호 확인</h6>
+															<input type="password" class="form-control"
+																id="password_check">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>이름</h6>
+															<input type="text" class="form-control" name="name"
+																id="name">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>
+																우편주소 <input type="button" onclick="execDaumPostcode()"
+																	value="우편번호 찾기" class="btn btn-outline-dark">
+															</h6>
+															<input type="text" class="form-control" id="zipcode"
+																name="zipcode">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>도로명 주소</h6>
+															<input type="text" class="form-control" id="addr1"
+																name="addr1">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>상세 주소</h6>
+															<input type="text" class="form-control" id="addr2"
+																name="addr2">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>전화번호</h6>
+															<input type="text" class="form-control" name="phone">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>이메일 : id@domain.com</h6>
+															<input type="text" class="form-control" id="email"
+																name="email">
+														</div>
+														<br>
+														<div align="center">
+															<button type="submit" class="btn btn-outline-primary">회원
+																가입</button>
+															<button type="reset" class="btn btn-outline-danger">다시
+																입력</button>
+															<button type="button" class="btn btn-outline-dark"
+																onclick="location.href='/user/loginPage'">뒤로</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</form>
 </body>
 </html>

@@ -2,11 +2,10 @@ package com.user.service;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionBindingEvent;
-import javax.servlet.http.HttpSessionBindingListener;
 
 import org.springframework.stereotype.Service;
 
@@ -20,13 +19,11 @@ public class UserServiceImpl implements UserService {
 	private UserDAO dao;
 
 	@Inject
-	private static Hashtable loginUsers = new Hashtable();
+	private static Hashtable<String, String> loginUsers = new Hashtable<String, String>();
 
 	@Override
 	public boolean userLogin(UserDTO dto, HttpSession session) throws Exception {
 		boolean isLogin = isLogin(dto.getId());
-		System.out.println(isLogin);
-
 		if (!isLogin) {
 			boolean result = dao.userLogin(dto);
 			if (result) {
@@ -77,9 +74,8 @@ public class UserServiceImpl implements UserService {
 	public boolean isLogin(String id) {
 		boolean isLogin = false;
 
-		Enumeration e = loginUsers.keys();
+		Enumeration<String> e = loginUsers.keys();
 		String key = "";
-		System.out.println(e);
 
 		while (e.hasMoreElements()) {
 			key = (String) e.nextElement();
@@ -93,7 +89,7 @@ public class UserServiceImpl implements UserService {
 	public boolean isUsing(String sessionId) {
 		boolean isUsing = false;
 
-		Enumeration e = loginUsers.keys();
+		Enumeration<String> e = loginUsers.keys();
 		String key = "";
 		while (e.hasMoreElements()) {
 			key = (String) e.nextElement();
@@ -106,6 +102,21 @@ public class UserServiceImpl implements UserService {
 	public void setSession(HttpSession session, UserDTO dto) {
 		loginUsers.put(session.getId(), dto.getId());
 		session.setAttribute("id", dto.getId());
+	}
+
+	@Override
+	public List<UserDTO> userFindId(UserDTO dto) throws Exception {
+		return dao.userFindId(dto);
+	}
+
+	@Override
+	public UserDTO userFindPw(UserDTO dto) throws Exception {
+		return dao.userFindPw(dto);
+	}
+
+	@Override
+	public int idCheck(String id) throws Exception {
+		return dao.idCheck(id);
 	}
 
 }

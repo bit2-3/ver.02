@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <meta name="viewport"
@@ -14,10 +15,12 @@
 	href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400"
 	rel="stylesheet">
 <head>
+<head>
 <meta charset="UTF-8">
-<title>Board Write</title>
+<title>Insert title here</title>
 </head>
 <body>
+
 	<jsp:include page="/WEB-INF/views/template/header.jsp" />
 	<br>
 	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
@@ -33,32 +36,23 @@
 										<div class="col-xl-6">
 											<div class="card">
 												<div class="card-body">
-													<h1 class="display-4" align="center">Board Write</h1>
-													<form method="post" action="/board/write">
+													<h1 class="display-4" align="center">User Find Id</h1>
+
+													<c:forEach items="${userFindId}" var="userFindId">
 														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>작성자</h6>
-															<input class="form-control" type="text"
-																value="${sessionScope.id}" name="id" readonly>
+															<h6>아이디</h6>
+															<input type="text" class="form-control" name="id"
+																value="${userFindId.id}" readonly>
 														</div>
 														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>제목</h6>
-															<input class="form-control" type="text"
-																placeholder="title" name="title">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>내용</h6>
-															<textarea class="form-control" type="textarea"
-																placeholder="내용" name="content"></textarea>
-														</div>
-														<br>
-														<div align="center">
-															<button type="submit" class="btn btn-outline-primary">확인</button>
-															<button type="button" class="btn btn-outline-info"
-																onclick="location.href='/board/list'">뒤로</button>
-														</div>
-													</form>
+													</c:forEach>
+													<div align="center">
+														<button type="button" class="btn btn-outline-primary"
+															onclick="location.href='/user/loginPage'">로그인</button>
+														<button type="button" class="btn btn-outline-dark"
+															onclick="location.href='/user/findPwPage'">비밀번호
+															찾기</button>
+													</div>
 												</div>
 											</div>
 										</div>

@@ -22,20 +22,34 @@
 	<div class="bg-dark navbar-dark text-white">
 		<div class="container">
 			<nav class="navbar px-0 navbar-expand-lg navbar-dark">
-				<c:if test="${sessionScope.id != null}">
-					<h4>WELCOME ${sessionScope.id}!</h4>
-					<div>
-						<button type="button"
-							onclick="location.href='/user/detail?id=${sessionScope.id}'">정보
-							수정</button>
-						<button type="button" onclick="location.href='/user/logout'">로그아웃</button>
-					</div>
-				</c:if>
-				<c:if test="${sessionScope.id == null}">
-					<div>
-						<button type="button" onclick="location.href='/user/loginPage'">로그인</button>
-					</div>
-				</c:if>
+				<div
+					class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+					<c:if test="${sessionScope.id != null}">
+						<h4>WELCOME ${sessionScope.id}!</h4>
+					</c:if>
+				</div>
+				<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+					<ul class="navbar-nav ml-auto">
+						<c:if test="${sessionScope.id != null}">
+							<div>
+								<button type="button"
+									class="btn btn-outline-danger btn-hover-text-dark btn-lg m-2"
+									onclick="location.href='/user/detail?id=${sessionScope.id}'">정보
+									수정</button>
+								<button type="button"
+									class="btn btn-outline-light btn-hover-text-dark btn-lg m-2"
+									onclick="location.href='/user/logout'">로그아웃</button>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.id == null}">
+							<div>
+								<button type="button"
+									class="btn btn-outline-light btn-hover-text-dark btn-lg m-2"
+									onclick="location.href='/user/loginPage'">로그인</button>
+							</div>
+						</c:if>
+					</ul>
+				</div>
 			</nav>
 		</div>
 	</div>

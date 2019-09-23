@@ -1,5 +1,7 @@
 package com.user.db;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -37,5 +39,20 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public void userDelete(String id) throws Exception {
 		sqlSession.delete(nameSpace + ".userDelete", id);
+	}
+
+	@Override
+	public List<UserDTO> userFindId(UserDTO dto) throws Exception {
+		return sqlSession.selectList(nameSpace + ".userFindId", dto);
+	}
+
+	@Override
+	public UserDTO userFindPw(UserDTO dto) throws Exception {
+		return sqlSession.selectOne(nameSpace + ".userFindPw", dto);
+	}
+
+	@Override
+	public int idCheck(String id) throws Exception {
+		return sqlSession.selectOne(nameSpace + ".idCheck", id);
 	}
 }

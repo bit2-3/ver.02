@@ -34,4 +34,19 @@
 		DELETE from user WHERE id=#{id}
 	</delete>
 
+	<select id="userFindId" resultType="UserDTO">
+		SELECT id from user WHERE
+		name=#{name} and email=#{email}
+	</select>
+
+	<select id="userFindPw" resultType="UserDTO">
+		SELECT pw from user WHERE
+		name=#{name} and id=#{id} and email=#{email}
+	</select>
+
+	<select id="idCheck" resultType="_int">
+		SELECT count(*) from user WHERE
+		id=#{id}
+	</select>
+
 </mapper>

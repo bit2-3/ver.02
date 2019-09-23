@@ -3,68 +3,95 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="/resources/css/bootstrap4-hello-world.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400"
+	rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <title>Board Read</title>
 </head>
 <body>
-	<form action="" method="post" enctype="multipart/form-data"
-		name="boardDetail">
-		<table>
-			<tr>
-				<td>게시판 글 읽기</td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">글번호</div>
-				</td>
-				<td><input name="id" type="text" value="${boardDetail.no}"
-					readonly /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">조회수</div>
-				</td>
-				<td><input name="id" type="text" value="${boardDetail.hit}"
-					readonly /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">작성자</div>
-				</td>
-				<td><input name="id" type="text" value="${boardDetail.id}"
-					readonly /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">제목</div>
-				</td>
-				<td><input name="title" type="text"
-					value="${boardDetail.title}" readonly /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">내용</div>
-				</td>
-				<td><textarea name="content" readonly>${boardDetail.content}</textarea></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">날짜</div>
-				</td>
-				<td><input type="text" name="date" value="${boardDetail.date}"
-					readonly></input></td>
-			</tr>
-			<tr align="center">
-				<td><c:if test="${sessionScope.id eq boardDetail.id }">
-						<button type="button"
-							onclick="location.href='/board/editPage?no=${boardDetail.no}'">수정</button>
-					<button type="button"
-						onclick="location.href='/board/delete?no=${boardDetail.no}'">삭제</button>
-					</c:if>
-					<button type="button" onclick="location.href='/board/list'">뒤로</button></td>
-			</tr>
-		</table>
-	</form>
+	<jsp:include page="/WEB-INF/views/template/header.jsp" />
+	<br>
+	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
+		<div class="container ht-tm-container">
+
+			<div class="row">
+				<div class="col-xl-12">
+					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
+						<div class="ht-tm-componentsblock">
+							<div class="ht-tm-cat ht-tm-btn-replaceable">
+								<div class="ht-tm-codeblock">
+									<div class="row">
+										<div class="col-xl-6">
+											<div class="card">
+												<div class="card-body">
+													<h1 class="display-4" align="center">Board Detail</h1>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>글번호</h6>
+														<input class="form-control" name="id" type="text"
+															value="${boardDetail.no}" readonly>
+													</div>
+													<br>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>조회수</h6>
+														<input class="form-control" type="text"
+															value="${boardDetail.hit}" readonly name="title">
+													</div>
+													<br>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>작성자</h6>
+														<input class="form-control" type="text"
+															value="${boardDetail.id}" name="id" readonly>
+													</div>
+													<br>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>제목</h6>
+														<input class="form-control" type="text"
+															value="${boardDetail.title}" name="title" readonly>
+													</div>
+													<br>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>내용</h6>
+														<textarea class="form-control" type="textarea"
+															name="content" readonly>${boardDetail.content}</textarea>
+													</div>
+													<br>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>날짜</h6>
+														<input class="form-control" type="text" name="date"
+															value="${boardDetail.date}" readonly>
+													</div>
+													<br>
+													<div align="center">
+														<c:if test="${sessionScope.id eq boardDetail.id }">
+															<button type="button" class="btn btn-outline-primary"
+																onclick="location.href='/board/editPage?no=${boardDetail.no}'">수정</button>
+															<button type="button" class="btn btn-outline-danger"
+																onclick="location.href='/board/delete?no=${boardDetail.no}'">삭제</button>
+														</c:if>
+														<button type="button" class="btn btn-outline-dark"
+															onclick="location.href='/board/list'">뒤로</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

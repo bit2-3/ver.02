@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <meta name="viewport"
@@ -15,10 +15,11 @@
 	rel="stylesheet">
 <head>
 <head>
-<meta charset="UTF-8">
-<title>User Find</title>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/views/template/header.jsp" />
 	<br>
 	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
 		<div class="container ht-tm-container">
@@ -29,15 +30,23 @@
 						<div class="ht-tm-componentsblock">
 							<div class="ht-tm-cat ht-tm-btn-replaceable">
 								<div class="ht-tm-codeblock">
-									<div class="ht-tm-element jumbotron">
-										<h1 class="display-4" align="center">User Find</h1>
-										<div class="mt-2">
-											<button type="button"
-												class="btn btn-danger btn-lg m-2 btn-wide"
-												onclick="location.href='/user/findIdPage'">아이디 찾기</button>
-											<button type="button"
-												class="btn btn-danger btn-lg m-2 btn-wide"
-												onclick="location.href='/user/findPwPage'">비밀번호 찾기</button>
+									<div class="row">
+										<div class="col-xl-6">
+											<div class="card">
+												<div class="card-body">
+													<h1 class="display-4" align="center">User Find PW</h1>
+													<div class="ht-tm-element ht-tm-element-inner">
+														<h6>��й�ȣ</h6>
+														<input type="text" class="form-control" name="pw"
+															value="${userFindPw.pw}" readonly>
+													</div>
+													<br>
+													<div align="center">
+														<button type="button" class="btn btn-outline-primary"
+															onclick="location.href='/user/loginPage'">�α���</button>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

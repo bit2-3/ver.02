@@ -2,6 +2,17 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+	integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="/resources/css/bootstrap4-hello-world.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:300,400"
+	rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <title>Board Edit</title>
@@ -9,42 +20,65 @@
 <title>MVC 게시판</title>
 </head>
 <body>
-	<form action="/board/edit" method="post">
-		<input type="hidden" name="no" value="${boardEdit.no}"></input>
-		<table>
-			<tr align="center">
-				<td>게시판 글 수정</td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">작성자</div>
-				</td>
-				<td><input name="id" type="text" value="${boardEdit.id}" /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">제목</div>
-				</td>
-				<td><input name="title" type="text" value="${boardEdit.title}" /></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">내용</div>
-				</td>
-				<td><textarea name="content">${boardEdit.id}</textarea></td>
-			</tr>
-			<tr>
-				<td>
-					<div align="center">날짜</div>
-				</td>
-				<td><input type="text" name="date" value="${boardEdit.date}"></input></td>
-			</tr>
-			<tr align="center">
-				<td><button type="submit">수정</button>
-					<button type="button"
-						onclick="location.href='/board/list'">뒤로</button></td>
-			</tr>
-		</table>
-	</form>
+	<jsp:include page="/WEB-INF/views/template/header.jsp" />
+	<br>
+	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
+		<div class="container ht-tm-container">
+
+			<div class="row">
+				<div class="col-xl-12">
+					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
+						<div class="ht-tm-componentsblock">
+							<div class="ht-tm-cat ht-tm-btn-replaceable">
+								<div class="ht-tm-codeblock">
+									<div class="row">
+										<div class="col-xl-6">
+											<div class="card">
+												<div class="card-body">
+													<h1 class="display-4" align="center">Board Edit</h1>
+													<form action="/board/edit" method="post">
+														<input type="hidden" name="no" value="${boardEdit.no}"></input>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>작성자</h6>
+															<input class="form-control" type="text"
+																value="${boardEdit.id}" name="id" readonly>
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>제목</h6>
+															<input class="form-control" type="text"
+																value="${boardEdit.title}" name="title">
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>내용</h6>
+															<textarea class="form-control" type="textarea"
+																name="content">${boardEdit.id}</textarea>
+														</div>
+														<br>
+														<div class="ht-tm-element ht-tm-element-inner">
+															<h6>날짜</h6>
+															<input class="form-control" type="text"
+																value="${boardEdit.date}" name="date" readonly>
+														</div>
+														<br>
+														<div align="center">
+															<button type="submit" class="btn btn-outline-primary">수정</button>
+															<button type="button" class="btn btn-outline-info"
+																onclick="location.href='/board/detail?no=${boardEdit.no}'">뒤로</button>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

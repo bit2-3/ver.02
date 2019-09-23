@@ -1,5 +1,7 @@
 package com.user.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import com.user.db.UserDTO;
@@ -17,4 +19,10 @@ public interface UserService {
 	public void userDelete(String id, HttpSession session) throws Exception;
 
 	public void userLogout(HttpSession session) throws Exception;
+
+	public List<UserDTO> userFindId(UserDTO dto) throws Exception;
+
+	public UserDTO userFindPw(UserDTO dto) throws Exception;
+
+	public int idCheck(String id) throws Exception;
 }
