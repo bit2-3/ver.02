@@ -51,11 +51,11 @@
 			getPw.focus();
 			return false;
 		} /* else if (!regMail.test(email)) { //메일주소 확인 
-																																										alert("이메일 형식 이상");
-																																										getMail.value = "";
-																																										getMail.focus();
-																																										return false;
-																																									} */
+																																											alert("이메일 형식 이상");
+																																											getMail.value = "";
+																																											getMail.focus();
+																																											return false;
+																																										} */
 	}
 </script>
 <script language="javascript">
@@ -114,7 +114,7 @@
 								<div class="ht-tm-cat ht-tm-btn-replaceable">
 									<div class="ht-tm-codeblock">
 										<div class="row">
-											<div class="col-xl-6">
+											<div style="float: none; margin: 0 auto;">
 												<div class="card">
 													<div class="card-body">
 														<h1 class="display-4" align="center">User Edit</h1>

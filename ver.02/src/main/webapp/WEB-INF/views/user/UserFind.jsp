@@ -19,33 +19,20 @@
 <title>User Find</title>
 </head>
 <body>
-	<br>
-	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
-		<div class="container ht-tm-container">
 
-			<div class="row">
-				<div class="col-xl-12">
-					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-						<div class="ht-tm-componentsblock">
-							<div class="ht-tm-cat ht-tm-btn-replaceable">
-								<div class="ht-tm-codeblock">
-									<div class="ht-tm-element jumbotron">
-										<h1 class="display-4" align="center">User Find</h1>
-										<div class="mt-2">
-											<button type="button"
-												class="btn btn-danger btn-lg m-2 btn-wide"
-												onclick="location.href='/user/findIdPage'">아이디 찾기</button>
-											<button type="button"
-												class="btn btn-danger btn-lg m-2 btn-wide"
-												onclick="location.href='/user/findPwPage'">비밀번호 찾기</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+	<div
+		class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0">
+		<div class="container">
+			<h1 class="display-2 text-white text-uppercase">User Find</h1>
+			<div class="mt-4">
+				<button type="button" class="btn btn-primary btn-lg m-2 btn-wide"
+					onclick="location.href='/user/findIdPage'">아이디 찾기</button>
+				<button type="button" class="btn btn-danger btn-lg m-2 btn-wide"
+					onclick="location.href='/user/findPwPage'">비밀번호 찾기</button>
 			</div>
+			<br>
+			<button type="button" class="btn btn-light btn-lg m-2 btn-wide"
+				onclick="location.href='/user/login'">뒤로가기</button>
 		</div>
 	</div>
 </body>

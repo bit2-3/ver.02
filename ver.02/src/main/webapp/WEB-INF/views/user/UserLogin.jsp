@@ -18,57 +18,47 @@
 <title>User Login</title>
 </head>
 <body>
-	<br>
-	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
-		<div class="container ht-tm-container">
-
+	<div
+		class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0">
+		<div class="container">
 			<div class="row">
-				<div class="col-xl-12">
-					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-						<div class="ht-tm-componentsblock">
-							<div class="ht-tm-cat ht-tm-btn-replaceable">
-								<div class="ht-tm-codeblock">
-									<div class="ht-tm-element jumbotron">
-										<h1 class="display-4" align="center">Login</h1>
-										<form action="/user/login" name="LoginForm" method="post">
-											<div class="col-xl-6" align="center">
-												<div class="ht-tm-codeblock">
-													<div class="ht-tm-element input-group">
-														<div class="input-group-prepend">
-															<button class="btn btn-lg btn-dark" type="button">ID</button>
-														</div>
-														<input type="text" class="form-control form-control-lg"
-															name="id">
-													</div>
-												</div>
-											</div>
-											<br>
-											<div class="col-xl-6">
-												<div class="ht-tm-codeblock">
-													<div class="ht-tm-element input-group">
-														<div class="input-group-prepend">
-															<button class="btn btn-lg btn-dark" type="button">pw</button>
-														</div>
-														<input type="password" class="form-control form-control-lg"
-															name="pw">
-													</div>
-												</div>
-											</div>
-											<br>
-											<div align="center">
-												<button type="submit" class="btn btn-outline-primary">로그인</button>
-												<button type="button" class="btn btn-outline-dark"
-													onclick="location.href='/user/joinPage'">회원가입</button>
-												<button type="button" class="btn btn-outline-warning"
-													onclick="location.href='/user/findPage'">아이디 비밀번호
-													찾기</button>
-											</div>
-										</form>
+				<div style="float: none; margin: 0 auto;">
+					<h1 class="display-2 text-white text-uppercase">Login</h1>
+					<form action="/user/login" name="LoginForm" method="post">
+						<div class="col-xl-12">
+							<div class="ht-tm-codeblock">
+								<div>
+									<div class="input-group-prepend">
+										<button class="btn btn-lg btn-dark" type="button">ID</button>
 									</div>
+									<input type="text" class="form-control form-control-lg"
+										name="id">
 								</div>
 							</div>
 						</div>
-					</div>
+						<br>
+						<div class="col-xl-12">
+							<div class="ht-tm-codeblock">
+								<div>
+									<div class="input-group-prepend">
+										<button class="btn btn-lg btn-dark" type="button">PW</button>
+									</div>
+									<input type="password" class="form-control form-control-lg"
+										name="pw">
+								</div>
+							</div>
+						</div>
+						<div class="mt-4">
+							<button type="submit" class="btn btn-danger btn-lg m-2 btn-wide">로그인</button>
+						</div>
+						<br>
+						<div>
+							<button type="button" class="btn btn-light btn-lg m-2 btn-wide"
+								onclick="location.href='/user/joinPage'">회원가입</button>
+							<button type="button" class="btn btn-warning btn-lg m-2 btn-wide"
+								onclick="location.href='/user/findPage'">아이디 비밀번호 찾기</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -20,13 +20,11 @@
 	<div
 		class="jumbotron jumbotron-fullheight jumbo-vertical-center text-light text-center bg-dark mb-0 radius-0">
 		<div class="container">
-			<h1 class="display-2 text-white text-uppercase">Hello World</h1>
-			<span class="lead lead-lg">Welcome!</span>
+			<h1 class="display-2 text-white text-uppercase">JaeHo & Idle</h1>
+			<span class="lead lead-lg">We Are SamJo</span>
 			<div class="mt-4">
 				<a href="/board" class="btn btn-danger btn-lg m-2 btn-wide"> <span>Board</span>
-				</a> 
-				<a href="/user" class="btn btn-light btn-lg m-2 btn-wide">
-					<span>User</span>
+				</a> <a href="/user" class="btn btn-light btn-lg m-2 btn-wide"> <span>User</span>
 				</a>
 			</div>
 		</div>

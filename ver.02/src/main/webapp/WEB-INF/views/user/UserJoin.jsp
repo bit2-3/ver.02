@@ -20,6 +20,8 @@
 <meta charset="UTF-8">
 <title>User Join</title>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script language="javascript">
 	function checks() {
 		//값 불러오기 
@@ -64,11 +66,11 @@
 			getPw.focus();
 			return false;
 		} /* else if (!regMail.test(email)) { //메일주소 확인 
-																																			alert("이메일 형식 이상");
-																																			getMail.value = "";
-																																			getMail.focus();
-																																			return false;
-																																		} */
+																																					alert("이메일 형식 이상");
+																																					getMail.value = "";
+																																					getMail.focus();
+																																					return false;
+																																				} */
 		else if (!regName.test(name)) { //이름 확인 
 			alert("이름 다시");
 			getName.value = "";
@@ -152,14 +154,15 @@
 								<div class="ht-tm-cat ht-tm-btn-replaceable">
 									<div class="ht-tm-codeblock">
 										<div class="row">
-											<div class="col-xl-6">
+											<div style="float: none; margin: 0 auto;">
 												<div class="card">
 													<div class="card-body">
 														<h1 class="display-4" align="center">User Join</h1>
 														<div class="ht-tm-element ht-tm-element-inner">
 															<h6>
 																아이디 : 4~12자의 영문 대소문자와 숫자로만 입력
-																<button type="button" class="btn btn-outline-warning" id="idCheck">중복 확인</button>
+																<button type="button" class="btn btn-outline-warning"
+																	id="idCheck">중복 확인</button>
 															</h6>
 															<input type="text" class="form-control" id="id" name="id">
 														</div>

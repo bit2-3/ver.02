@@ -31,7 +31,7 @@
 								<div class="ht-tm-cat ht-tm-btn-replaceable">
 									<div class="ht-tm-codeblock">
 										<div class="row">
-											<div class="col-xl-6">
+											<div style="float: none; margin: 0 auto;">
 												<div class="card">
 													<div class="card-body">
 														<h1 class="display-4" align="center">User Find ID</h1>
@@ -49,7 +49,7 @@
 														<div align="center">
 															<button type="submit" class="btn btn-outline-primary">찾기</button>
 															<button type="button" class="btn btn-outline-dark"
-																onclick="location.href='/board/list'">뒤로</button>
+																onclick="location.href='/user/findPage'">뒤로</button>
 														</div>
 													</div>
 												</div>

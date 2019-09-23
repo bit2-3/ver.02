@@ -32,7 +32,7 @@
 							<div class="ht-tm-cat ht-tm-btn-replaceable">
 								<div class="ht-tm-codeblock">
 									<div class="row">
-										<div class="col-xl-6">
+										<div style="float: none; margin: 0 auto;">
 											<div class="card">
 												<div class="card-body">
 													<h1 class="display-4" align="center">Board Edit</h1>
@@ -80,5 +80,6 @@
 			</div>
 		</div>
 	</div>
+	<br>
 </body>
 </html>

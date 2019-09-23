@@ -59,38 +59,36 @@
 				</table>
 			</div>
 		</div>
-		<div style="float: right; position: relative; left: -40%">
-			<ul class="btn-group pagination">
-				<c:if test="${paging.prev }">
-					<li><a class="btn btn-primary btn-sm"
-						href='<c:url value="/board/list?page=${paging.startPage-1 }"/>'>
-							<i class="fa fa-chevron-left"></i>
-					</a></li>
-				</c:if>
+		<ul align="center" style="list-style: none">
+			<c:if test="${paging.prev }">
+				<li><a class="btn btn-primary btn-sm"
+					href='<c:url value="/board/list?page=${paging.startPage-1 }"/>'>
+						<i class="fa fa-chevron-left"></i>
+				</a></li>
+			</c:if>
 
-				<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
-					var="idx">
-					<c:choose>
-						<c:when test="${paging.cri.page eq idx}">
-							<li><b><a class="btn btn-primary btn-sm"
-									href='<c:url value="/board/list?page=${idx }"/>'><i
-										class="fa">${idx }&nbsp;</i></a></b></li>
-						</c:when>
-						<c:otherwise>
-							<li><a class="btn btn-outline-primary btn-sm"
+			<c:forEach begin="${paging.startPage }" end="${paging.endPage }"
+				var="idx">
+				<c:choose>
+					<c:when test="${paging.cri.page eq idx}">
+						<li><b><a class="btn btn-primary btn-sm"
 								href='<c:url value="/board/list?page=${idx }"/>'><i
-									class="fa">${idx }&nbsp;</i></a></li>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
+									class="fa">${idx }&nbsp;</i></a></b></li>
+					</c:when>
+					<c:otherwise>
+						<li><a class="btn btn-outline-primary btn-sm"
+							href='<c:url value="/board/list?page=${idx }"/>'><i
+								class="fa">${idx }&nbsp;</i></a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
 
-				<c:if test="${paging.next && paging.endPage >0 }">
-					<li><a class="btn btn-primary btn-sm"
-						href='<c:url value="/board/list?page=${paging.endPage+1 }"/>'><i
-							class="fa fa-chevron-right"></i></a></li>
-				</c:if>
-			</ul>
-		</div>
+			<c:if test="${paging.next && paging.endPage >0 }">
+				<li><a class="btn btn-primary btn-sm"
+					href='<c:url value="/board/list?page=${paging.endPage+1 }"/>'><i
+						class="fa fa-chevron-right"></i></a></li>
+			</c:if>
+		</ul>
 	</div>
 </body>
 </html>
