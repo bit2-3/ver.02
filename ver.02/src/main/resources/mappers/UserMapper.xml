@@ -39,7 +39,7 @@
 		name=#{name} and email=#{email}
 	</select>
 
-	<select id="userFindPw" resultType="UserDTO">
+	<select id="userFindPw" resultType="String">
 		SELECT pw from user WHERE
 		name=#{name} and id=#{id} and email=#{email}
 	</select>

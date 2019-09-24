@@ -47,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public UserDTO userFindPw(UserDTO dto) throws Exception {
+	public String userFindPw(UserDTO dto) throws Exception {
 		return sqlSession.selectOne(nameSpace + ".userFindPw", dto);
 	}
 

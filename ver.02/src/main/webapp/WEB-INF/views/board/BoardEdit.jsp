@@ -24,56 +24,42 @@
 	<br>
 	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
 		<div class="container ht-tm-container">
-
 			<div class="row">
-				<div class="col-xl-12">
-					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-						<div class="ht-tm-componentsblock">
-							<div class="ht-tm-cat ht-tm-btn-replaceable">
-								<div class="ht-tm-codeblock">
-									<div class="row">
-										<div style="float: none; margin: 0 auto;">
-											<div class="card">
-												<div class="card-body">
-													<h1 class="display-4" align="center">Board Edit</h1>
-													<form action="/board/edit" method="post">
-														<input type="hidden" name="no" value="${boardEdit.no}"></input>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>작성자</h6>
-															<input class="form-control" type="text"
-																value="${boardEdit.id}" name="id" readonly>
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>제목</h6>
-															<input class="form-control" type="text"
-																value="${boardEdit.title}" name="title">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>내용</h6>
-															<textarea class="form-control" type="textarea"
-																name="content">${boardEdit.content}</textarea>
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>날짜</h6>
-															<input class="form-control" type="text"
-																value="${boardEdit.date}" name="date" readonly>
-														</div>
-														<br>
-														<div align="center">
-															<button type="submit" class="btn btn-outline-primary">수정</button>
-															<button type="button" class="btn btn-outline-info"
-																onclick="location.href='/board/detail?no=${boardEdit.no}'">뒤로</button>
-														</div>
-													</form>
-												</div>
-											</div>
-										</div>
-									</div>
+				<div style="float: none; margin: 0 auto;">
+					<div class="card">
+						<div class="card-body">
+							<h1 class="display-4" align="center">Board Edit</h1>
+							<form action="/board/edit" method="post">
+								<input type="hidden" name="no" value="${boardEdit.no}"></input>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>작성자</h6>
+									<input class="form-control" type="text" value="${boardEdit.id}"
+										name="id" readonly>
 								</div>
-							</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>제목</h6>
+									<input class="form-control" type="text"
+										value="${boardEdit.title}" name="title">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>내용</h6>
+									<textarea class="form-control" type="textarea" name="content">${boardEdit.content}</textarea>
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>날짜</h6>
+									<input class="form-control" type="text"
+										value="${boardEdit.date}" name="date" readonly>
+								</div>
+								<br>
+								<div align="center">
+									<button type="submit" class="btn btn-outline-primary">수정</button>
+									<button type="button" class="btn btn-outline-info"
+										onclick="location.href='/board/detail?no=${boardEdit.no}'">뒤로</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

@@ -110,7 +110,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserDTO userFindPw(UserDTO dto) throws Exception {
+	public String userFindPw(UserDTO dto) throws Exception {
 		return dao.userFindPw(dto);
 	}
 

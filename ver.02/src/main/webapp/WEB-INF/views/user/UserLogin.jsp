@@ -32,7 +32,7 @@
 										<button class="btn btn-lg btn-dark" type="button">ID</button>
 									</div>
 									<input type="text" class="form-control form-control-lg"
-										name="id">
+										required name="id">
 								</div>
 							</div>
 						</div>
@@ -44,21 +44,21 @@
 										<button class="btn btn-lg btn-dark" type="button">PW</button>
 									</div>
 									<input type="password" class="form-control form-control-lg"
-										name="pw">
+										required name="pw">
 								</div>
 							</div>
 						</div>
 						<div class="mt-4">
-							<button type="submit" class="btn btn-danger btn-lg m-2 btn-wide">로그인</button>
+							<button type="submit" class="btn btn-danger btn-lg m-2 btn-wide">Login</button>
 						</div>
 						<br>
-						<div>
-							<button type="button" class="btn btn-light btn-lg m-2 btn-wide"
-								onclick="location.href='/user/joinPage'">회원가입</button>
-							<button type="button" class="btn btn-warning btn-lg m-2 btn-wide"
-								onclick="location.href='/user/findPage'">아이디 비밀번호 찾기</button>
-						</div>
 					</form>
+					<button type="button" class="btn btn-primary btn-lg m-2"
+						onclick="location.href='/user/joinPage'">Join</button>
+					<button type="button" class="btn btn-warning btn-lg m-2"
+						onclick="location.href='/user/findPage'">Find Id/Pw</button>
+					<button type="button" class="btn btn-light btn-lg m-2"
+						onclick="location.href='/'">Main</button>
 				</div>
 			</div>
 		</div>

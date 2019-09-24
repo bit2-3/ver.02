@@ -23,69 +23,56 @@
 	<br>
 	<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
 		<div class="container ht-tm-container">
-
 			<div class="row">
-				<div class="col-xl-12">
-					<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-						<div class="ht-tm-componentsblock">
-							<div class="ht-tm-cat ht-tm-btn-replaceable">
-								<div class="ht-tm-codeblock">
-									<div class="row">
-										<div style="float: none; margin: 0 auto;">
-											<div class="card">
-												<div class="card-body">
-													<h1 class="display-4" align="center">Board Detail</h1>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>글번호</h6>
-														<input class="form-control" name="id" type="text"
-															value="${boardDetail.no}" readonly>
-													</div>
-													<br>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>조회수</h6>
-														<input class="form-control" type="text"
-															value="${boardDetail.hit}" readonly name="title">
-													</div>
-													<br>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>작성자</h6>
-														<input class="form-control" type="text"
-															value="${boardDetail.id}" name="id" readonly>
-													</div>
-													<br>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>제목</h6>
-														<input class="form-control" type="text"
-															value="${boardDetail.title}" name="title" readonly>
-													</div>
-													<br>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>내용</h6>
-														<textarea class="form-control" type="textarea"
-															name="content" readonly>${boardDetail.content}</textarea>
-													</div>
-													<br>
-													<div class="ht-tm-element ht-tm-element-inner">
-														<h6>날짜</h6>
-														<input class="form-control" type="text" name="date"
-															value="${boardDetail.date}" readonly>
-													</div>
-													<br>
-													<div align="center">
-														<c:if test="${sessionScope.id eq boardDetail.id }">
-															<button type="button" class="btn btn-outline-primary"
-																onclick="location.href='/board/editPage?no=${boardDetail.no}'">수정</button>
-															<button type="button" class="btn btn-outline-danger"
-																onclick="location.href='/board/delete?no=${boardDetail.no}'">삭제</button>
-														</c:if>
-														<button type="button" class="btn btn-outline-dark"
-															onclick="location.href='/board/list'">뒤로</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+				<div style="float: none; margin: 0 auto;">
+					<div class="card">
+						<div class="card-body">
+							<h1 class="display-4" align="center">Board Detail</h1>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>글번호</h6>
+								<input class="form-control" name="id" type="text"
+									value="${boardDetail.no}" readonly>
+							</div>
+							<br>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>조회수</h6>
+								<input class="form-control" type="text"
+									value="${boardDetail.hit}" readonly name="title">
+							</div>
+							<br>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>작성자</h6>
+								<input class="form-control" type="text"
+									value="${boardDetail.id}" name="id" readonly>
+							</div>
+							<br>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>제목</h6>
+								<input class="form-control" type="text"
+									value="${boardDetail.title}" name="title" readonly>
+							</div>
+							<br>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>내용</h6>
+								<textarea class="form-control" type="textarea" name="content"
+									readonly>${boardDetail.content}</textarea>
+							</div>
+							<br>
+							<div class="ht-tm-element ht-tm-element-inner">
+								<h6>날짜</h6>
+								<input class="form-control" type="text" name="date"
+									value="${boardDetail.date}" readonly>
+							</div>
+							<br>
+							<div align="center">
+								<c:if test="${sessionScope.id eq boardDetail.id }">
+									<button type="button" class="btn btn-outline-primary"
+										onclick="location.href='/board/editPage?no=${boardDetail.no}'">수정</button>
+									<button type="button" class="btn btn-outline-danger"
+										onclick="location.href='/board/delete?no=${boardDetail.no}'">삭제</button>
+								</c:if>
+								<button type="button" class="btn btn-outline-dark"
+									onclick="location.href='/board/list'">뒤로</button>
 							</div>
 						</div>
 					</div>

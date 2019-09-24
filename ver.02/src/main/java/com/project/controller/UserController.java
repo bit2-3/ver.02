@@ -1,11 +1,12 @@
 package com.project.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -110,16 +111,19 @@ public class UserController {
 	@RequestMapping("/findId")
 	public ModelAndView userFindId(@ModelAttribute UserDTO dto) throws Exception {
 		ModelAndView mav = new ModelAndView();
+		List<UserDTO> userList = service.userFindId(dto);
+		System.out.println(userList);
 		mav.setViewName("/user/UserId");
-		mav.addObject("userFindId", service.userFindId(dto));
+		mav.addObject("userFindId", userList);
 		return mav;
 	}
 
 	@RequestMapping("/findPw")
 	public ModelAndView userFindPw(@ModelAttribute UserDTO dto) throws Exception {
 		ModelAndView mav = new ModelAndView();
+		String pw = service.userFindPw(dto);
 		mav.setViewName("/user/UserPw");
-		mav.addObject("userFindPw", service.userFindPw(dto));
+		mav.addObject("userFindPw", pw);
 		return mav;
 	}
 }

@@ -23,44 +23,31 @@
 	<form action="/user/findPw" method="post">
 		<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
 			<div class="container ht-tm-container">
-
 				<div class="row">
-					<div class="col-xl-12">
-						<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-							<div class="ht-tm-componentsblock">
-								<div class="ht-tm-cat ht-tm-btn-replaceable">
-									<div class="ht-tm-codeblock">
-										<div class="row">
-											<div style="float: none; margin: 0 auto;">
-												<div class="card">
-													<div class="card-body">
-														<h1 class="display-4" align="center">User Find PW</h1>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>아이디</h6>
-															<input type="text" class="form-control" name="id">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>이름</h6>
-															<input type="text" class="form-control" name="name">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>이메일 : id@domain.com</h6>
-															<input type="text" class="form-control" name="email">
-														</div>
-														<br>
-														<div align="center">
-															<button type="submit" class="btn btn-outline-primary">비밀번호
-																찾기</button>
-															<button type="button" class="btn btn-outline-dark"
-																onclick="location.href='/user/findPage'">뒤로</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+					<div style="float: none; margin: 0 auto;">
+						<div class="card">
+							<div class="card-body">
+								<h1 class="display-4" align="center">User Find PW</h1>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>아이디</h6>
+									<input type="text" class="form-control" required name="id">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>이름</h6>
+									<input type="text" class="form-control" required name="name">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>이메일 : id@domain.com</h6>
+									<input type="text" class="form-control" required name="email">
+								</div>
+								<br>
+								<div align="center">
+									<button type="submit" class="btn btn-outline-primary">비밀번호
+										찾기</button>
+									<button type="button" class="btn btn-outline-dark"
+										onclick="location.href='/user/findPage'">뒤로</button>
 								</div>
 							</div>
 						</div>

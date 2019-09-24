@@ -22,7 +22,7 @@ public interface UserService {
 
 	public List<UserDTO> userFindId(UserDTO dto) throws Exception;
 
-	public UserDTO userFindPw(UserDTO dto) throws Exception;
+	public String userFindPw(UserDTO dto) throws Exception;
 
 	public int idCheck(String id) throws Exception;
 }

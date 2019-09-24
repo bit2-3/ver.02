@@ -66,11 +66,11 @@
 			getPw.focus();
 			return false;
 		} /* else if (!regMail.test(email)) { //메일주소 확인 
-																																					alert("이메일 형식 이상");
-																																					getMail.value = "";
-																																					getMail.focus();
-																																					return false;
-																																				} */
+																																								alert("이메일 형식 이상");
+																																								getMail.value = "";
+																																								getMail.focus();
+																																								return false;
+																																							} */
 		else if (!regName.test(name)) { //이름 확인 
 			alert("이름 다시");
 			getName.value = "";
@@ -146,90 +146,71 @@
 	<form action="/user/join" method="post" onSubmit="return checks()">
 		<div class="ht-tm-wrapper ht-tm-wrapper-inspectoron">
 			<div class="container ht-tm-container">
-
 				<div class="row">
-					<div class="col-xl-12">
-						<div id="ht-tm-maincolumn" class="ht-tm-maincolumn">
-							<div class="ht-tm-componentsblock">
-								<div class="ht-tm-cat ht-tm-btn-replaceable">
-									<div class="ht-tm-codeblock">
-										<div class="row">
-											<div style="float: none; margin: 0 auto;">
-												<div class="card">
-													<div class="card-body">
-														<h1 class="display-4" align="center">User Join</h1>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>
-																아이디 : 4~12자의 영문 대소문자와 숫자로만 입력
-																<button type="button" class="btn btn-outline-warning"
-																	id="idCheck">중복 확인</button>
-															</h6>
-															<input type="text" class="form-control" id="id" name="id">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>비밀번호 : 4~12자의 영문 대소문자와 숫자로만 입력</h6>
-															<input type="password" class="form-control" id="pw"
-																name="pw">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>비밀번호 확인</h6>
-															<input type="password" class="form-control"
-																id="password_check">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>이름</h6>
-															<input type="text" class="form-control" name="name"
-																id="name">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>
-																우편주소 <input type="button" onclick="execDaumPostcode()"
-																	value="우편번호 찾기" class="btn btn-outline-dark">
-															</h6>
-															<input type="text" class="form-control" id="zipcode"
-																name="zipcode">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>도로명 주소</h6>
-															<input type="text" class="form-control" id="addr1"
-																name="addr1">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>상세 주소</h6>
-															<input type="text" class="form-control" id="addr2"
-																name="addr2">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>전화번호</h6>
-															<input type="text" class="form-control" name="phone">
-														</div>
-														<br>
-														<div class="ht-tm-element ht-tm-element-inner">
-															<h6>이메일 : id@domain.com</h6>
-															<input type="text" class="form-control" id="email"
-																name="email">
-														</div>
-														<br>
-														<div align="center">
-															<button type="submit" class="btn btn-outline-primary">회원
-																가입</button>
-															<button type="reset" class="btn btn-outline-danger">다시
-																입력</button>
-															<button type="button" class="btn btn-outline-dark"
-																onclick="location.href='/user/loginPage'">뒤로</button>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+					<div style="float: none; margin: 0 auto;">
+						<div class="card">
+							<div class="card-body">
+								<h1 class="display-4" align="center">User Join</h1>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>
+										아이디 : 4~12자의 영문 대소문자와 숫자
+										<button type="button" class="btn btn-outline-warning"
+											id="idCheck">중복 확인</button>
+									</h6>
+									<input type="text" class="form-control" id="id" name="id">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>비밀번호 : 4~12자의 영문 대소문자와 숫자</h6>
+									<input type="password" class="form-control" id="pw" name="pw">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>비밀번호 확인</h6>
+									<input type="password" class="form-control" id="password_check">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>이름</h6>
+									<input type="text" class="form-control" name="name" id="name">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>
+										우편주소 <input type="button" onclick="execDaumPostcode()"
+											value="우편번호 찾기" class="btn btn-outline-dark">
+									</h6>
+									<input type="text" class="form-control" id="zipcode"
+										name="zipcode">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>도로명 주소</h6>
+									<input type="text" class="form-control" id="addr1" name="addr1">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>상세 주소</h6>
+									<input type="text" class="form-control" id="addr2" name="addr2">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>전화번호</h6>
+									<input type="text" class="form-control" name="phone">
+								</div>
+								<br>
+								<div class="ht-tm-element ht-tm-element-inner">
+									<h6>이메일 : id@domain.com</h6>
+									<input type="text" class="form-control" id="email" name="email">
+								</div>
+								<br>
+								<div align="center">
+									<button type="submit" class="btn btn-outline-primary">회원
+										가입</button>
+									<button type="reset" class="btn btn-outline-danger">다시
+										입력</button>
+									<button type="button" class="btn btn-outline-dark"
+										onclick="location.href='/user/loginPage'">뒤로</button>
 								</div>
 							</div>
 						</div>
