@@ -1,6 +1,5 @@
 package com.board.db;
 
-// 데이터 model
 public class BoardDTO {
 	private int no;
 	private String title;

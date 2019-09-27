@@ -1,6 +1,5 @@
 package com.user.db;
 
-// ตฅภฬลอ model
 public class UserDTO {
 	private String id;
 	private String pw;
