@@ -4,9 +4,9 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.user.db.UserDAO;
@@ -15,10 +15,10 @@ import com.user.db.UserDTO;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Inject
+	@Autowired
 	private UserDAO dao;
 
-	@Inject
+	@Autowired
 	private static Hashtable<String, String> loginUsers = new Hashtable<String, String>();
 
 	@Override

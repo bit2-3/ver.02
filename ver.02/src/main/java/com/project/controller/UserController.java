@@ -2,10 +2,10 @@ package com.project.controller;
 
 import java.util.List;
 
-import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import com.user.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
-	@Inject
+	@Autowired
 	private UserService service;
 
 	@RequestMapping("/loginPage")
