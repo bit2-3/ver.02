@@ -17,7 +17,7 @@ public class MyBatisTest {
 
 	@Test
 	public void testFactory() {
-		System.out.println("\n >>>>>>>>>> sqlFactory 출력 : " + sqlFactory);
+		System.out.println("\n >>>>>>>>>> sqlFactory : " + sqlFactory);
 	}
 
 	@Test
@@ -25,7 +25,7 @@ public class MyBatisTest {
 
 		try (SqlSession session = sqlFactory.openSession()) {
 
-			System.out.println(" >>>>>>>>>> session 출력 : " + session + "\n");
+			System.out.println(" >>>>>>>>>> session : " + session + "\n");
 
 		} catch (Exception e) {
 			e.printStackTrace();
