@@ -5,7 +5,6 @@ import java.util.Map;
 
 import com.board.service.Criteria;
 
-// DB 연동
 public interface BoardDAO {
 	public List<BoardDTO> boardList() throws Exception;
 
