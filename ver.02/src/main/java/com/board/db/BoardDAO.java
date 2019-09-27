@@ -9,7 +9,7 @@ public interface BoardDAO {
 	public List<BoardDTO> boardList() throws Exception;
  
 	public BoardDTO boardDetail(int no) throws Exception;
-
+ 
 	public void boardHit(int no) throws Exception;
 
 	public void boardDelete(int no) throws Exception;
