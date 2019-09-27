@@ -7,7 +7,7 @@ import com.board.service.Criteria;
 
 public interface BoardDAO {
 	public List<BoardDTO> boardList() throws Exception;
-
+ 
 	public BoardDTO boardDetail(int no) throws Exception;
 
 	public void boardHit(int no) throws Exception;
