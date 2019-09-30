@@ -16,7 +16,7 @@ public interface BoardDAO {
 
 	public void boardWrite(BoardDTO dto) throws Exception;
 
-	public void boardEdit(BoardDTO dto) throws Exception;
+	public void boardEdit(BoardDTO dto) throws Exception; 
 
 	public List<Map<String, Object>> listAll(Criteria cri) throws Exception;
  
