@@ -31,11 +31,19 @@
 		var getMail = document.getElementById("email");
 		var getName = document.getElementById("name");
 
+		var getZipcode = document.getElementById("zipcode");
+		var getAddr1 = document.getElementById("addr1");
+		var getAddr2 = document.getElementById("addr2");
+
 		//value 불러오기 
 		var id = getId.value;
 		var pw = getPw.value;
 		var pwCheck = getPwCheck.value;
 		var name = getName.value;
+
+		var zipcode = getZipcode.value;
+		var getAddr1 = getAddr1.value;
+		var getAddr2 = getAddr2.value;
 
 		//유효성 검사 
 		var regExp = /^[a-zA-Z0-9]{4,12}$/;
@@ -45,36 +53,42 @@
 		var regMail = /[a-z0-9]{2,}@[a-z0-9-]{2,}.[a-z0-9]{2,}/i;
 		//mail 
 		if (!regExp.test(id)) { //id 
-			alert("아이디 다시 설정");
+			alert("아이디를 다시 설정해주세요");
 			getId.value = "";
 			getId.focus();
 			return false;
 		} else if (!regExp.test(pw)) { //password 
-			alert("비밀번호 다시 설정");
+			alert("비밀번호를 다시 설정해주세요");
 			getPw.value = "";
 			getPw.focus();
 			return false;
 		} else if (!(pwCheck.slice(0, pwCheck.length) == pw.slice(0, pw.length))) { //password 동일한지 확인 
-			alert("비밀번호 서로 안맞아");
+			alert("비밀번호가 서로 맞지않습니다");
 			getPwCheck.value = "";
 			getPwCheck.focus();
 			return false;
 		} else if ((pw.slice(0, pwCheck.length) == id.slice(0, id.length))) { //password랑 id 다른지 확인 
-			alert("비밀번호와 id가 동일하면 다매요!");
+			alert("비밀번호와 id가 동일합니다");
 			getPw.value = "";
 			getPwCheck.value = "";
 			getPw.focus();
 			return false;
-		} /* else if (!regMail.test(email)) { //메일주소 확인 
-																																								alert("이메일 형식 이상");
-																																								getMail.value = "";
-																																								getMail.focus();
-																																								return false;
-																																							} */
-		else if (!regName.test(name)) { //이름 확인 
-			alert("이름 다시");
+		} else if (!regName.test(name)) { //이름 확인 
+			alert("이름을 다시 입력해주세요");
 			getName.value = "";
 			getName.focus();
+			return false;
+		} else if (zipcode.length == 0){
+			alert("우편번호를 입력해주세요")
+			getZipcode.focus();
+			return false;
+		} else if (addr1.length == 0){
+			alert("주소를 입력해주세요")
+			getAddr1.focus();
+			return false;
+		} else if (addr2.length == 0){
+			alert("상세 주소를 입력해주세요")
+			getAddr2.focus();
 			return false;
 		}
 	}
