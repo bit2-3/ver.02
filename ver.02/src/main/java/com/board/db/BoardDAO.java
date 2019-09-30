@@ -20,5 +20,5 @@ public interface BoardDAO {
 
 	public List<Map<String, Object>> listAll(Criteria cri) throws Exception;
  
-	public int boardListCnt(BoardDTO dto) throws Exception;
+	public int boardListCnt(BoardDTO dto) throws Exception; 
 }
